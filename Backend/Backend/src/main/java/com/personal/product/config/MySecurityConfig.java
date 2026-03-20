@@ -63,7 +63,8 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 					"/user/**",
 					"/admin/**",
 					"/review/request",
-					"/delete/{productId}")
+					"/delete/{productId}",
+					"/getProduct/{productId}")
 				.permitAll()
 				// Allow pre-flight requests (OPTIONS) without authentication
 				.antMatchers(HttpMethod.OPTIONS).permitAll()

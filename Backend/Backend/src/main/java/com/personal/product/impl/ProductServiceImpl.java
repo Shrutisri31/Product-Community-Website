@@ -37,6 +37,7 @@ public class ProductServiceImpl implements ProductService {
 	public Product showSingleProduct(Long productId) {
 		return this.productRepository.findById(productId).orElse(null);
 	}
+	
 
 	// Find a product by product code
 	public Product findByProductCode(String productCode) {

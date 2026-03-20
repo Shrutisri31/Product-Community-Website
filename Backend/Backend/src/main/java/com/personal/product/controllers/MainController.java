@@ -63,7 +63,7 @@ public class MainController {
 			user.setPassword(this.passwordEncoder.encode(user.getPassword()));
 			Set<UserRole> roles = new HashSet<>();
 			Role role = new Role();
-			if (user.getEmail().equalsIgnoreCase("muskankhoiya@gmail.com")) {
+			if (user.getEmail().equalsIgnoreCase("abhishek@gmail.com")) {
 				role.setRoleId(44L);
 				role.setRoleName("ADMIN");
 			} else {
@@ -186,6 +186,15 @@ public class MainController {
 			throw new Exception(e);
 		}
 	}
+	
+	@GetMapping("/getProduct/{productId}")
+	@CrossOrigin("*")
+	public Product getProductById(@PathVariable long productId) {
+	    // Assuming you have a repository or service to fetch the product by ID
+	    Product product = productService.showSingleProduct(productId);
+	   return product;
+	}
+
 
 	/**
 	 * Add a new review.
